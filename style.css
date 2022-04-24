@@ -125,6 +125,8 @@ body {
   border: 7px solid var(--clr-secondary);
   padding: 2rem;
   width: 100%;
+  display: grid;
+  place-items: center;
 }
 
 /* MESSAGE */
@@ -132,9 +134,11 @@ body {
   font-size: 2.5rem;
   text-align: center;
   display: flex;
-  height: 100%;
+  width: 100%;
   flex-direction: column;
   align-items: center;
+  animation: fadeIn 0.5s;
+  margin-top: -1em;
 }
 .message__stamp {
   width: 7.5rem;
@@ -157,15 +161,18 @@ button:focus {
 
 .message__control--next {
   left: 2rem;
+  top: 2rem;
 }
 .message__control--previous {
   right: 2rem;
+  top: 2rem;
 }
 
 .message__text {
   margin-top: 3rem;
   font-size: 2.4rem;
   max-width: 32ch;
+  margin-bottom: 1em;
 }
 
 .message__sender {
@@ -186,6 +193,7 @@ button:focus {
 
 .hidden {
   display: none;
+  transition: all 1s ease-out;
 }
 
 /* MEDIA QUERIES */
@@ -238,5 +246,14 @@ button:focus {
 
   .message__text {
     margin-bottom: 1em;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
